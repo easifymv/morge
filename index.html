@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bank Account Details</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f0f4f8; padding: 20px; max-width: 600px; margin: auto; text-align: center; }
+    .box { background: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+    img { width: 140px; margin-bottom: 25px; }
+    .label { font-weight: bold; margin-top: 20px; font-size: 1.1em; }
+    .copy-box { display: flex; justify-content: center; align-items: center; gap: 10px; margin-top: 8px; }
+    input { padding: 10px; width: 75%; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; }
+    button { padding: 10px 16px; border: none; background: #d6001c; color: white; border-radius: 6px; cursor: pointer; font-weight: bold; }
+    button:hover { background: #a80015; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <img src="https://upload.wikimedia.org/wikipedia/en/c/c2/Logo_of_Bank_of_Maldives.svg" alt="Bank of Maldives Logo" />
+    
+    <div class="label">Account Number:</div>
+    <div class="copy-box">
+      <input type="text" id="acc" value="90101101559691000" readonly />
+      <button onclick="copyText('acc')">Copy</button>
+    </div>
+
+    <div class="label">Name:</div>
+    <p>Mohamed A. Latheef</p>
+
+    <div class="label">Viber Number:</div>
+    <div class="copy-box">
+      <input type="text" id="viber" value="+9609130999" readonly />
+      <button onclick="copyText('viber')">Copy</button>
+    </div>
+  </div>
+
+  <script>
+    function copyText(id) {
+      const input = document.getElementById(id);
+      input.select();
+      input.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      alert("Copied: " + input.value);
+    }
+  </script>
+</body>
+</html>
